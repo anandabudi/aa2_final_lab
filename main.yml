@@ -132,12 +132,6 @@
     - application_servers
     - flask
   roles:
-    - role: firewall
-      vars:
-        firewall_services:
-          - http
-        firewall_tcp_ports:
-          - 8080
     - role: flask
     
 - name: Deploy haproxy load balancer
