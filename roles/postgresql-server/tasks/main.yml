@@ -1,21 +1,19 @@
 ---
 - name: Initialized Postgres Repository
   yum:
-    name: "{{ postgres_rhel7_repo }}"
+    name: "postgresql"
     state: present
-    disable_gpg_check: True
 
-- name: Initialized EPEL Repository for RHEL 8
-  yum:
-    name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-    state: present
-    disable_gpg_check: True
+# - name: Initialized EPEL Repository for RHEL 8
+#   yum:
+#     name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+#     state: present
+#     disable_gpg_check: True
 
 - name: Install Postgres packages
   package:
     name: "{{ __package }}"
     state: present
-    disable_gpg_check: True
   loop: 
     - "{{ postgres_packages }}"
     - "{{ postgres_library }}"
@@ -29,8 +27,11 @@
 
 - when: not r_postgres_init_dir_state.stat.exists
   name: Run Postgres initdb to initialize if postgres not initialized
-  command: "{{ postgres_10_bin_path }}/postgresql-10-setup initdb"
+  command: "postgresql-setup initdb"
   notify: restart_postgres
+
+
+# ===============================
 
 - name: Setup Postgres for remote password auth
   template:
