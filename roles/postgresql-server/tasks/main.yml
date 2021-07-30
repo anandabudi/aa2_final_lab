@@ -1,11 +1,16 @@
 ---
+- name: Initialized Postgres Repository
+  yum:
+    name: "{{ postgres_rhel7_repo }}"
+    state: present
+    diisable_gpg_check: True
+
 - name: Install Postgres packages
   package:
     name: "{{ __package }}"
     state: present
     disable_gpg_check: True
   loop: 
-    - "{{ postgres_rhel7_repo }}"        
     - "{{ postgres_packages }}"
     - "{{ postgres_library }}"
   loop_control:
