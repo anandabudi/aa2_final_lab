@@ -5,6 +5,12 @@
     state: present
     disable_gpg_check: True
 
+- name: Initialized EPEL Repository for RHEL 8
+  yum:
+    name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+    state: present
+    disable_gpg_check: True
+
 - name: Install Postgres packages
   package:
     name: "{{ __package }}"
