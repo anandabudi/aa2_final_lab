@@ -27,10 +27,10 @@
     path: "{{ postgres_10_data_dir }}/PG_VERSION"
   register: r_postgres_init_dir_state
 
-# - when: not r_postgres_init_dir_state.stat.exists
-#   name: Run Postgres initdb to initialize if postgres not initialized
-#   command: "{{ postgres_10_bin_path }}/psql initdb"
-#   notify: restart_postgres
+- when: not r_postgres_init_dir_state.stat.exists
+  name: Run Postgres initdb to initialize if postgres not initialized
+  command: "{{ postgres_10_bin_path }}/psql initdb"
+  notify: restart_postgres
 
 - name: Setup Postgres for remote password auth
   template:
