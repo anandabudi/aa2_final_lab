@@ -4,12 +4,6 @@
     name: "postgresql"
     state: present
 
-# - name: Initialized EPEL Repository for RHEL 8
-#   yum:
-#     name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-#     state: present
-#     disable_gpg_check: True
-
 - name: Install Postgres packages
   package:
     name: "{{ __package }}"
@@ -26,8 +20,8 @@
   register: r_postgres_init_dir_state
 
 - when: not r_postgres_init_dir_state.stat.exists
-  name: Run Postgres initdb to initialize if postgres not initialized
-  command: "postgresql-setup initdb"
+  name: Run Postgres initdb to initialize if postgres not initialized (RHEL 8)
+  command: "postgresql-setup --initdb"
   notify: restart_postgres
 
 
