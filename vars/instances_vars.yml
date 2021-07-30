@@ -5,7 +5,7 @@ instances:
     image: rhel-8.3
     flavor: GLOBAL-CPU_4_Memory_8192_Disk_30_flavor
     security_group: a085-HostSG
-    internal_network: a085-tower-network
+    internal_network: a085-dev-network
     metadata:
       AnsibleGroup: osp_instances
       deployment_name: dev
@@ -15,7 +15,7 @@ instances:
     image: rhel-8.3
     flavor: GLOBAL-CPU_4_Memory_8192_Disk_30_flavor
     security_group: a085-HostSG
-    internal_network: a085-tower-network
+    internal_network: a085-dev-network
     metadata:
       AnsibleGroup: osp_instances
       deployment_name: dev
@@ -25,7 +25,7 @@ instances:
     image: rhel-8.3
     flavor: GLOBAL-CPU_4_Memory_8192_Disk_30_flavor
     security_group: a085-HostSG
-    internal_network: a085-tower-network
+    internal_network: a085-dev-network
     metadata:
       AnsibleGroup: osp_instances
       deployment_name: dev
@@ -35,7 +35,7 @@ instances:
     image: rhel-8.3
     flavor: GLOBAL-CPU_4_Memory_8192_Disk_30_flavor
     security_group: a085-HostSG
-    internal_network: a085-tower-network
+    internal_network: a085-dev-network
     metadata:
       AnsibleGroup: osp_instances
       deployment_name: dev
