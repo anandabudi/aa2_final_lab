@@ -1,8 +1,12 @@
 [load_balancers]
+lb.xample.com
 
 [app_servers]
+web1.example.com
+web2.example.com
 
 [database_servers]
+db.example.com
 
 
 [all:vars]
