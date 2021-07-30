@@ -142,12 +142,6 @@
     - load_balancers
   
   roles:
-    - role: firewall
-      vars:
-        firewall_services:
-          - http
-        firewall_tcp_ports:
-          - 5000
     - role: haproxy
 
 - name: End to end smoke tests
