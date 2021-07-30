@@ -4,8 +4,9 @@
   gather_facts: false
   tags:
     - database_servers
-
-  role: postgresql-server
+  
+  roles:
+    role: postgresql-server
   
   # handlers:
 
@@ -21,16 +22,18 @@
   tags:
     - application_servers
     - flask
-  role: flask
+  roles:
+    role: flask
     
-
-
 - name: Deploy haproxy load balancer
   hosts: load_balancers
   gather_facts: false 
 
   tags:
     - load_balancers
+  
+  roles:
+    role: haproxy
 
   handlers:
 
