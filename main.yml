@@ -26,6 +26,12 @@
 - name: Deploy, configure, and populate Postgres 10
   hosts: database_servers
   roles:
+    - role: firewall
+      vars:
+        firewall_services:
+          - postgresql
+        firewall_tcp_ports:
+          - 5432
     - role: postgresql-server
 
   gather_facts: false
@@ -40,6 +46,12 @@
     - application_servers
     - flask
   roles:
+    - role: firewall
+      vars:
+        firewall_services:
+          - http
+        firewall_tcp_ports:
+          - 8080
     - role: flask
     
 - name: Deploy haproxy load balancer
@@ -50,6 +62,12 @@
     - load_balancers
   
   roles:
+    - role: firewall
+      vars:
+        firewall_services:
+          - http
+        firewall_tcp_ports:
+          - 5000
     - role: haproxy
 
 - name: End to end smoke tests
