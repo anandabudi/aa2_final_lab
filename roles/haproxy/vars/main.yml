@@ -1,0 +1,4 @@
+---
+vars:
+  load_balancer_packages:
+    - haproxy
