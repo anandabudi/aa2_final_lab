@@ -1,5 +1,5 @@
 [load_balancers]
-lb.xample.com
+lb.example.com
 
 [app_servers]
 web1.example.com
