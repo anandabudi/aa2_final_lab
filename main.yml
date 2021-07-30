@@ -183,7 +183,6 @@
   tags:
     - smoketest  
   tasks:
- 
     - name: Check webserver for correct response
       uri:
         url: "http://lb.example.com/ping"
