@@ -1,0 +1,10 @@
+[load_balancers]
+
+[app_servers]
+
+[database_servers]
+
+
+[all:vars]
+ansible_user=cloud-user
+ansible_ssh_private_key_file=~/.ssh/a085key.pem
