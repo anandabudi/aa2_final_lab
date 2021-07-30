@@ -3,7 +3,7 @@
   yum:
     name: "{{ postgres_rhel7_repo }}"
     state: present
-    diisable_gpg_check: True
+    disable_gpg_check: True
 
 - name: Install Postgres packages
   package:
