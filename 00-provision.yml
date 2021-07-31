@@ -1,7 +1,6 @@
 ---
 - name: Create OpenStack Instances
-  hosts: localhost
-  connection: local
+  hosts: control_node
   gather_facts: false
   vars:
     guid: a085
